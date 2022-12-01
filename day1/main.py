@@ -1,21 +1,3 @@
-sample_input = """
-1000
-2000
-3000
-
-4000
-
-5000
-6000
-
-7000
-8000
-9000
-
-10000
-"""
-
-
 def parse_input():
     all_elf_calories = list() 
     with open('day1/input.txt') as f:
