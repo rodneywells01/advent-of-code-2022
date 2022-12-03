@@ -1,8 +1,6 @@
 import string 
 
-alpha_num_map = {
-    "a": 1
-}
+alpha_num_map = dict()
 
 letters = string.ascii_letters[:26]
 numbers = [i for i in range(26)] 
@@ -10,8 +8,6 @@ numbers = [i for i in range(26)]
 for i in range(len(numbers)):
     alpha_num_map[letters[i]] = numbers[i] + 1
     alpha_num_map[letters[i].upper()] = numbers[i] + 1 + 26
-
-print(alpha_num_map)
 
 
 def parse_input():
@@ -23,20 +19,12 @@ def parse_input():
         lines = [line.rstrip('\n') for line in f.readlines()]
         
         return lines
-    
-    
-
 
 rucksacks = parse_input()
 
-print (rucksacks)    
-
 priority_sum = 0 
 for rucksack in rucksacks: 
-    print(rucksack)
     mid = int(len(rucksack) / 2)
-    # print(mid)
-    
     left_sack = set(rucksack[:mid])
     right_sack = set(rucksack[mid:]) 
     
