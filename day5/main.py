@@ -1,9 +1,9 @@
 def parse_input(): 
     with open('day5/input.txt') as f:
-        # pairs = [pair.split("-") for pair in  [line.rstrip().split(",") for line in f.readlines()]]
         lines = f.readlines()
         separation_line = 0 
         num_columns = 0
+        
         for idx in range(len(lines)):
             # Determine number of cols and separation line in the input file. 
             if len(lines[idx]) and lines[idx][1] == "1": 
@@ -46,7 +46,6 @@ def solve_part_one(stacks, commands):
         
         # Move each crate
         for crate_idx in range(qty): 
-            crate_to_move = stacks[source][-1]
             stacks[destination].append(stacks[source][source_size - crate_idx - 1])
             stacks[source].pop()
         
